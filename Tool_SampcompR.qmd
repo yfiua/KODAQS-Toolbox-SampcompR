@@ -1,10 +1,10 @@
 ---
-title: "SampCompR"
-subtitle: "SampcompR for Response Bias Estimation"
+title: "SampcompR"
+subtitle: "A Tool for Response Bias Estimation"
 author:
   - name: "Rohr Björn"
 image: images/logo_sampcompR.png 
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+date: "r format(Sys.Date(), '%B %d, %Y')"
 format:
   html:     
     toc: true
@@ -31,6 +31,17 @@ knitr::opts_chunk$set(
 
 # At a glance
 
+How can we evaluate whether our (survey-) estimates are accurate? Will our survey estimates be biased, when we conduct our survey only in the web mode? Questions like these can be answered with the SampcompR R-Package, which is demonstrated in this KODAQS-Tool. 
+
+- In a first step we describe the data used to demonstrate SampcompR.
+
+- Further we show how SampcompR can be used to evaluate univariate survey bias.
+
+- Next we investigate whether the estimates of the example survey are biased on an bivariate level.
+
+- Are the multivariate estimates in the example data biased?
+
+- Finally we conclude this Tool with some recommendations.
 <!-- Summary with main points of the tool in 2-3 bullet points -->
 
 ### Table of Content
@@ -44,6 +55,15 @@ knitr::opts_chunk$set(
 [Conclusion and recommendations](#conclusion-and-recommendations)
 
 # Introduction {#introduction}
+
+When we conduct a survey in the social sciences, we often want to know whether
+the survey's estimates accurately reflect the estimates of the whole population.
+Nonresponse or selective participation (e.g., due to the survey mode) can lead
+to biased estimates, that can be hard to detect, as it requires available benchmarks, that accurately reflect the population. But even when these benchmarks, are available evaluating the bias in survey estimates can be a time-consuming and
+methodologically complex task, which is often neg-elected for in studies. SampcompR is an R-Package that was specifically designed to reduce the time and burden,
+when performing such analysis. Given suitable benchmark data, it allows researchers, to perform bias analysis on a univariate, bivariate and multivariate level, easily visualize the bias and bring the analyzes in a publication ready format, that can acompany any study, or data-release as a robustness check. In this tool,
+I present how the are package is used to evaluate bias on all three levels of estimation and how the results are interpreted.
+
 
 # Set-up
 
@@ -477,6 +497,8 @@ As acknowledged by the Total Survey Error Framework [@grovesTotalSurveyError2010
 - Although it is seldom possible to measure the bias for all variables of interest, due to a lack of benchmarks, it might be possible to perform at least some bias analyses, e.g., for demographic variables. Reporting such findings as additional analyses in the Appendix would not only indicate transparancy in research, but might also take some weight of limitations. Although unbiased estimates for one variable do not guarantee for other variables to be unbiased, they might at least hint at it, especially when one can reasonably argue that the variables are correlated. 
 
 - Although we have shown only a simple use case for this tool, SampcompR is also applicable to more complex data, as it can also make use of strata, cluster information, and weights. Further raking and post-stratification weights can be calculated during comparison, and bootstrap can be used to evaluate the difference between survey and benchmark. The later method is often recommended for complex surveys including nonprobability surveys [i.e., @mcpheeDataQualityMetrics2022]
+
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
 
 # References
 
